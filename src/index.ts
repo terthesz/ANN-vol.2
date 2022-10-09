@@ -1,3 +1,3 @@
 import Network from './network';
 
-new Network();
+const network = new Network([2, 3, 2]);

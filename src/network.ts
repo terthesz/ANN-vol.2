@@ -1,9 +1,13 @@
-import ClassNameConstructor from '../libs/class_name_constructor';
+import Layer from './layer';
 
-@ClassNameConstructor
 class Network {
-  Network() {
-    console.log('Hello World!');
+  layers: Array<Layer>;
+
+  constructor(structure: Array<number>) {
+    if (!structure || !structure.length)
+      throw new Error('❗ network structure not defined. (Network.Network)');
+
+    this.layers = structure.map((nodes: number) => new Layer(nodes));
   }
 }
 
